@@ -1,11 +1,11 @@
 gsutil mb -p [your project id] -l asia gs://[any bucket name]
 export PROJECT_ID=kinetic-object-400913
-export BUCKET_NAME=kinetic-object-400913-mysql-demo-auto-backup
+export BUCKET_NAME=kinetic-object-400913-postgresql-demo-auto-backup
 gsutil mb -p $PROJECT_ID -l asia gs://$BUCKET_NAME
 
 
 
-export SA_NAME=$(gcloud sql instances describe demo-mysql --project=$PROJECT_ID --format="value(serviceAccountEmailAddress)")
+export SA_NAME=$(gcloud sql instances describe demo-postgresql --project=$PROJECT_ID --format="value(serviceAccountEmailAddress)")
 
 #Grant write access to the service account
 
